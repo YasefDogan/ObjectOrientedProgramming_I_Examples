@@ -33,14 +33,12 @@ namespace sesliHarfSayimi
             int sesliHarf = 0;
 
             // Kelimenin tüm karakterlerini teker teker dolaş
-            for (int i = 0; i < kelime.Length; i++)
-            {
-                char c = kelime[i]; // i. karakteri al
+            foreach (char c in kelime)
+ {
+     if ("aeıioöuü".Contains(c)) // Türkçe sesli harfler dizisini kontrol et
+         sesliHarf++; // Eğer karakter bu string içinde varsa sesliHarf++ yapılır
+ }
 
-                // Türkçe sesli harfler dizisini kontrol et
-                // Eğer karakter bu string içinde varsa sesliHarf++ yapılır
-                if ("aeıioöuü".Contains(c)) sesliHarf++;
-            }
 
             // Sonucu yazdır
             Console.WriteLine(originalkelime + " kelimesindeki sesli harf sayısı: " + sesliHarf);
